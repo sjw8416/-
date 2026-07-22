@@ -396,6 +396,7 @@
   }
   .calc-included{margin-top:26px;padding-top:22px;border-top:1px solid var(--border);}
   .calc-included-label{display:block;font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:12px;}
+  .calc-noevent-badge{display:inline-block;margin-left:6px;font-size:10.5px;font-weight:700;color:#8A5A00;background:#FFF3D6;padding:2px 8px;border-radius:999px;vertical-align:middle;}
   .calc-included-list{display:flex;flex-wrap:wrap;gap:8px;}
   .calc-included-list span{
     font-size:12.5px;font-weight:600;color:var(--blue-dark);background:var(--blue-tint);
@@ -595,7 +596,7 @@
 </head>
 <body>
 
-<div class="top-banner">정기청소 신규 상담 시 <strong>30% 할인</strong> 진행 중</div>
+<div class="top-banner">정기청소 신규 상담 시 <strong>20% 할인</strong> 진행 중</div>
 
 <header>
   <div class="wrap nav">
@@ -619,6 +620,7 @@
       </div>
       <a href="#beforeafter">청소사례</a>
       <a href="pricing.html">가격안내</a>
+      <a href="calculator.html">견적계산기</a>
       <a href="#reviews">고객후기</a>
       <a href="blog.html">청소정보</a>
       <a href="#contact">문의하기</a>
@@ -945,7 +947,8 @@
             <option value="3">주 3회</option>
             <option value="4">주 4회</option>
             <option value="5">주 5회</option>
-            <option value="6">주 6회 이상</option>
+            <option value="6">주 6회</option>
+            <option value="7">주 7회</option>
           </select>
         </div>
       </div>
@@ -959,12 +962,12 @@
       </div>
 
       <div class="calc-addons">
-        <span class="calc-included-label">추가 옵션 (선택, 별도 비용)</span>
-        <label class="calc-check"><input type="checkbox" data-addon="waste" data-price="10000"> 쓰레기 분리수거 요일별 배출 <em>(주당 10,000원)</em></label>
+        <span class="calc-included-label">추가 옵션 (선택, 별도 비용) <span class="calc-noevent-badge">이벤트 적용 제외 · 원가로 추가</span></span>
+        <label class="calc-check"><input type="checkbox" data-addon="waste" data-price="0"> 쓰레기 분리수거 배출작업 <em>(협의 후 진행, 금액 미반영)</em></label>
         <label class="calc-check"><input type="checkbox" data-addon="stairs" data-price="15000"> 복도 · 계단청소 <em>(10m×3m당 15,000원)</em></label>
         <label class="calc-check"><input type="checkbox" data-addon="elevator" data-price="30000"> 엘리베이터 청소 <em>(4주 기준 30,000원)</em></label>
         <label class="calc-check"><input type="checkbox" data-addon="setup" data-price="0"> 초반 셋팅 작업(계약 후) <em>— 평당 10,000~15,000원, 별도 협의</em></label>
-        <p class="calc-addon-note">* 물류정리, 유리 전체작업, 바닥 유막·버핑, 외부 테라스·블로잉, 주차장, 주방, 흡연실 청소 등은 현장 확인 후 별도 협의됩니다.</p>
+        <p class="calc-addon-note">* 위 추가 옵션은 이벤트 할인이 적용되지 않으며, 정상 원가 그대로 합산됩니다.<br>* 물류정리, 유리 전체작업, 바닥 유막·버핑, 외부 테라스·블로잉, 주차장, 주방, 흡연실 청소 등은 현장 확인 후 별도 협의됩니다.</p>
       </div>
 
       <label class="calc-check calc-vat"><input type="checkbox" id="calcVat"> 세금계산서 발행 (VAT 10% 별도 추가)</label>
@@ -980,12 +983,12 @@
         </div>
 
         <div class="calc-event-result">
-          <span class="calc-event-tag">🎉 이벤트금액 <em>-30%</em></span>
+          <span class="calc-event-tag">🎉 이벤트금액 <em>-20%</em></span>
           <strong id="calcEventOutput" class="calc-event-total">0원</strong>
           <div class="calc-event-pervisit">회당 <strong id="calcPerVisitEvent">-</strong></div>
         </div>
 
-        <p class="calc-disclaimer">* 위 금액은 현금가(VAT 별도) 기준 견적표를 근거로 한 <strong>예상 계산 결과</strong>이며, 방문 횟수는 월 4주 기준 근사치입니다. 이벤트금액은 오픈 프로모션 기간 한정 예상가로, 실제 최종 견적 및 이벤트 적용 여부는 상담 시 확인해드립니다.</p>
+        <p class="calc-disclaimer">* 위 금액은 현금가(VAT 별도) 기준 견적표를 근거로 한 <strong>예상 계산 결과</strong>이며, 방문 횟수는 월 4주 기준 근사치입니다. 이벤트금액(20% 할인)은 오픈 프로모션 기간 한정 예상가로, 실제 최종 견적 및 이벤트 적용 여부는 상담 시 확인해드립니다.</p>
       </div>
 
       <a href="#contact" id="calcCta" class="btn btn-primary calc-cta">이벤트금액으로 상담 신청하기</a>
@@ -1138,7 +1141,7 @@
   <img id="wdLightboxImg" src="" alt="확대 이미지">
 </div>
 
-<script src="assets/image-loader.js"></script>
+<script src="assets/image-loader.js?v=2"></script>
 <script src="assets/links.js?v=2"></script>
 <script>
   // 이미지 라이트박스 (전문가용 장비 / 보고 시스템 / 작업 스케줄표)
@@ -1175,26 +1178,26 @@
     const eventOutputEl = document.getElementById('calcEventOutput');
     if (!areaEl || !freqEl || !outputEl) return;
 
-    const EVENT_DISCOUNT = 0.3; // 오픈 이벤트 할인율 30%
+    const EVENT_DISCOUNT = 0.2; // 오픈 이벤트 할인율 20%
 
     // 평수 구간별, 방문 주기별 회당 기본 금액 (현금가 기준)
     const PRICE_TABLE = [
-      {label:"20평 이하", price:{1:80000,2:45000,3:45000,4:45000,5:40000}},
-      {label:"30평 이하", price:{1:90000,2:50000,3:45000,4:45000,5:45000}},
-      {label:"40평 이하", price:{1:100000,2:55000,3:50000,4:50000,5:45000}},
-      {label:"60평 이하", price:{1:110000,2:60000,3:60000,4:55000,5:50000}},
-      {label:"80평 이하", price:{1:120000,2:70000,3:65000,4:60000,5:55000}},
-      {label:"100평 이하", price:{1:130000,2:80000,3:70000,4:60000,5:60000}},
-      {label:"150평 이하", price:{1:140000,2:90000,3:80000,4:70000,5:65000}},
-      {label:"200평 이하", price:{1:150000,2:90000,3:90000,4:85000,5:70000}},
+      {label:"20평 이하", price:{1:90000,2:55000,3:55000,4:55000,5:50000,6:45000}},
+      {label:"30평 이하", price:{1:100000,2:60000,3:55000,4:55000,5:55000,6:50000}},
+      {label:"40평 이하", price:{1:110000,2:65000,3:60000,4:60000,5:55000,6:50000}},
+      {label:"60평 이하", price:{1:120000,2:70000,3:70000,4:65000,5:60000,6:55000}},
+      {label:"80평 이하", price:{1:130000,2:80000,3:75000,4:70000,5:65000,6:60000}},
+      {label:"100평 이하", price:{1:140000,2:90000,3:80000,4:70000,5:70000,6:65000}},
+      {label:"150평 이하", price:{1:150000,2:100000,3:90000,4:80000,5:75000,6:70000}},
+      {label:"200평 이하", price:{1:160000,2:100000,3:100000,4:95000,5:80000,6:75000}},
     ];
 
     function calc(){
       const areaVal = areaEl.value;
       const freq = parseInt(freqEl.value, 10);
 
-      // 200평 초과 또는 주 6회 이상 → 현장 확인 후 개별 견적
-      if (areaVal === 'over' || freq === 6) {
+      // 200평 초과 → 현장 확인 후 개별 견적
+      if (areaVal === 'over' || freq === 7) {
         perVisitEl.textContent = '별도 견적';
         perVisitEventEl.textContent = '별도 견적';
         monthlyLine.style.display = 'none';
@@ -1214,9 +1217,15 @@
         if (el.checked) addonTotal += parseInt(el.dataset.price, 10) || 0;
       });
 
-      let total = (perVisit * visitsPerMonth) + addonTotal;
-      if (vatEl && vatEl.checked) total = Math.round(total * 1.1);
-      const eventTotal = Math.round(total * (1 - EVENT_DISCOUNT) / 100) * 100;
+      const basicMonthly = perVisit * visitsPerMonth;
+      const basicMonthlyEvent = Math.round(basicMonthly * (1 - EVENT_DISCOUNT) / 100) * 100;
+
+      let total = basicMonthly + addonTotal; // 정상가 = 기본청소(정상) + 추가옵션(원가)
+      let eventTotal = basicMonthlyEvent + addonTotal; // 이벤트가 = 기본청소(할인) + 추가옵션(원가, 할인 제외)
+      if (vatEl && vatEl.checked) {
+        total = Math.round(total * 1.1);
+        eventTotal = Math.round(eventTotal * 1.1);
+      }
 
       perVisitEl.textContent = perVisit.toLocaleString('ko-KR') + '원 / 회';
       perVisitEventEl.textContent = perVisitEvent.toLocaleString('ko-KR') + '원 / 회';
@@ -1250,7 +1259,7 @@
         if (addonLabels.length) summary += '- 선택 추가옵션: ' + addonLabels.join(', ') + '\n';
         summary += '- 세금계산서: ' + vatLabel + '\n';
         summary += '- 예상 정상가: ' + outputEl.textContent + '\n';
-        summary += '- 예상 이벤트금액(30% 할인): ' + eventOutputEl.textContent;
+        summary += '- 예상 이벤트금액(20% 할인): ' + eventOutputEl.textContent;
 
         msgFieldEl.value = summary;
 
